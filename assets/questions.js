@@ -4,6 +4,12 @@ var questions = [
      choices: ["Number", "String", "Boolean", "Undifined", "All the above"],
      answer: "All the above"
    },
+   {
+       title: "which one of these key-words is function scoped?",
+       choices: ["Var", "Let", "Both"],
+       answer: "Var"
+       
+   },
 
           
     {
@@ -36,17 +42,7 @@ var questions = [
       ],
       answer: "All the above"
     },
-    {
-      title:
-        "Which one of these is not among the three different types of errors in JavaScript?",
-      choices: [
-        "Animation time errors",
-        "Load time errors",
-        "Run time errors",
-        "Logical Errors"
-      ],
-      answer: "Animation time errors"
-    },
+    
     {
       title: "What is the data type of variables in JavaScript?",
       choices: [
