@@ -21,8 +21,8 @@ body {
   }
   
   .feedback {
-    font-style: italic;
-    font-size: 120%;
+    font-style:italic;
+    font-size: 100%;
     margin-top: 20px;
     padding-top: 10px;
     color: rgb(126, 95, 95);
@@ -42,7 +42,7 @@ body {
   }
   
   a:hover {
-    color: #70707a;
+    color: #5a5a6e;
   }
   
   button {
@@ -73,7 +73,7 @@ body {
   
   ol {
     padding-left: 0px;
-    max-height: 400px;
+    max-height: 350px;
     overflow: auto;
   }
   
