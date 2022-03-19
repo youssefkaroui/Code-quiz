@@ -3,7 +3,7 @@ body {
   }
   .wrapper {
     margin: 100px auto 0 auto;
-    max-width: 700px;
+    max-width: 650px;
   }
   
   .hide {
@@ -21,7 +21,7 @@ body {
   }
   
   .feedback {
-    font-style:italic;
+    
     font-size: 100%;
     margin-top: 20px;
     padding-top: 10px;
@@ -31,8 +31,8 @@ body {
   
   .timer {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
   }
   
   a {
@@ -82,6 +82,4 @@ body {
     list-style: decimal inside none;
   }
   
-  li:nth-child(odd) {
-    background-color: #dfdae7;
-  }
+  
