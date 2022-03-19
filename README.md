@@ -1,11 +1,11 @@
 # Code-quiz
 
 ## Table of content 
-   *Purpose 
-   * Installation 
-   * Built with 
-   * Website 
-   * Contribution 
+    * Purpose 
+    * Installation 
+    * Built with 
+    * Website 
+    * Contribution 
 
 ## Purpose
 
