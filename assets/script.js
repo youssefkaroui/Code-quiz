@@ -12,6 +12,8 @@ var currentQuestionIndex = 0;
 var time = questions.length * 15;
 var timerId;
 
+
+
 function startQuiz() {
   
   var startScreenEl = document.getElementById("start-screen");
@@ -20,12 +22,24 @@ function startQuiz() {
 
   questionsEl.removeAttribute("class");
 
-
-  timerId = setInterval(clockTick, 1000);
-
-  timerEl.textContent = time;
+  runTimer();
+  
 
   getQuestion();
+}
+
+function runTimer() {
+  timerId = setInterval(function() {
+    console.log(time)
+    console.log(typeof time)
+    time--;
+    timerEl.textContent = time;
+  
+    if (time <= 0) {
+      quizEnd();
+    }
+  }, 1000);
+  
 }
 
 function getQuestion() {
@@ -111,13 +125,13 @@ function quizEnd() {
 
 function clockTick() {
   
-  time--;
-  timerEl.textContent = time;
+  // time--;
+  // timerEl.textContent = time;
 
   
-  if (time <= 0) {
-    quizEnd();
-  }
+  // if (time <= 0) {
+  //   quizEnd();
+  // }
 }
 
 function saveHighscore() {
