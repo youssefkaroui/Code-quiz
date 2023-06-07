@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-quiz</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<header>
+<section class="time-count"> Timer:
+    <span id="time-count"></span>
+
+</section>
+<section class="score-tab">
+    <a href="#quiz-score">Scores </a>
+
+</section>
+</header>
+<div class="main">
+
+  <div class="quiz-start" id="quiz-start" >
+  <h1>Code Quiz</h1>
+  <p> What have you learned so far! Here is a coding related quick quiz! </p>
+  <button id="start-btn"> Start-quiz</button>
+</div>
+<div class="hide" id="questions">
+    <h2 id="question"></h2>
+    <div class="choices" id="choices"></div>
+
+</div>
+<div class="hide" id="quiz-end">
+    <h2>You are Done!</h2>
+    <p>Your final score is: <span id="final-score"></span>.</p>
+    <p>
+        Please enter you initials: <input type="text" id="your-initials">
+        <button id="init-submission"> Submit</button>
+     </p>
+
+</div>
+
+
+</div>
+
+<div class="score-container">
+    <h1>Your scores</h1>
+    <ol id="Scores"></ol>
+
+    <a href="#quiz-start"><button>Play again</button></a>
+    <button id="clear">Clear scores</button>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
