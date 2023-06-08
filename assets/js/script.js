@@ -109,3 +109,22 @@ var multipelQuestions=[
       }
     
 ]
+var currentQuestion=0;
+var time =multipelQuestions.length * 14;
+var  timerId;
+
+function triggerTimer() {
+    timerId=setInterval(function(){
+        console.log(time)
+        console.log(typeof time)
+        time--;
+        timerEl.textContent=time;
+        if (time=0){
+            quizEnd();
+        }
+    },1000
+}
+
+function getQuestion(){
+    var currentQuestion= quizQ
+}
