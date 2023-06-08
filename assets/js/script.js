@@ -109,7 +109,7 @@ var multipelQuestions=[
       }
     
 ]
-var currentQuestion=0;
+var currentQuestionIndex=0;
 var time =multipelQuestions.length * 14;
 var  timerId;
 
@@ -122,9 +122,28 @@ function triggerTimer() {
         if (time=0){
             quizEnd();
         }
-    },1000
+    },1000);
 }
 
 function getQuestion(){
-    var currentQuestion= quizQ
+    var currentQuestion= multipelQuestions[currentQuestionIndex];
+    var question =document.getElementById("question");
+    question.textcontent =currentQuestion.question;
+    choicesEl.innerHTML="";
+    currentQuestion.differentChoices.forEach(function(choice,i) {
+        var decision= document.createElement("button");
+        decision.setAttribute("class","choice");
+        decision.setAttribute("value", choice);
+        decision.textContent= choice;
+        if (this.value !== multipelQuestions[currentQuestionIndex].answer) {
+            time-=12;
+            if (time<0){
+                time=0;
+            }
+            timerEl.textContent= time;
+            
+
+        }
+    }
+
 }
