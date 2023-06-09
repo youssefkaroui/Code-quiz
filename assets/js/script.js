@@ -130,20 +130,35 @@ function getQuestion(){
     var question =document.getElementById("question");
     question.textcontent =currentQuestion.question;
     choicesEl.innerHTML="";
-    currentQuestion.differentChoices.forEach(function(choice,i) {
+    currentQuestion.differentChoices.forEach(function(choice) {
         var decision= document.createElement("button");
         decision.setAttribute("class","choice");
         decision.setAttribute("value", choice);
         decision.textContent= choice;
-        if (this.value !== multipelQuestions[currentQuestionIndex].answer) {
-            time-=12;
-            if (time<0){
-                time=0;
-            }
-            timerEl.textContent= time;
-            
 
-        }
-    }
+        decision.onclick= executeClick;
 
+        choicesEl.appendChild(decision);
+        
+    });
+
+}
+
+function executeClick(){
+
+if (this.value !== multipelQuestions[currentQuestionIndex].answer) {
+  time-=12;
+  if (time<0){
+      time=0;
+  }
+  timerEl.textContent= time;
+
+  currentQuestionIndex++;
+  
+  if (currentQuestionIndex=== multipelQuestions.length){
+    endQuiz
+  }
+  
+
+}
 }
