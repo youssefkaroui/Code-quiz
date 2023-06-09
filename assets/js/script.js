@@ -113,6 +113,17 @@ var currentQuestionIndex=0;
 var time =multipelQuestions.length * 14;
 var  timerId;
 
+function startQuiz (){
+  startFunctionDisplay= document.getElementById("quiz-start");
+  startFunctionDisplay.setAttribute("class", "hide");
+
+  questionEl.removeAttribute("class");
+
+  triggerTimer();
+  getQuestion();
+  
+}
+
 function triggerTimer() {
     timerId=setInterval(function(){
         console.log(time)
@@ -157,8 +168,21 @@ if (this.value !== multipelQuestions[currentQuestionIndex].answer) {
   
   if (currentQuestionIndex=== multipelQuestions.length){
     endQuiz
+  } else {
+    getQuestion();
+
   }
   
 
 }
+}
+
+function endQuiz(){
+
+  clearInterval(timerId);
+
+  var finalScoreEl= document.getElementById("end-quiz");
+  finalScoreEl.textContent = time;
+
+  questionEl.setAttribute("class","hide");
 }
