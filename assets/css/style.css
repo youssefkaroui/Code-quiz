@@ -1,0 +1,67 @@
+body {
+    font-family:"Georgia", serif;
+  }
+  
+  
+  .hide {
+    display: none;
+  }
+  
+  .quizstart {
+    text-align: center;
+  }
+  
+  
+  
+  .timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+    transition: color 2s;
+  }
+  
+  a:hover {
+    color: #5a5a6e;
+  }
+  
+  button {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-family: "Georgia", 'Times New Roman', "Times", cursive;
+    font-size: 100%;
+    background-color: rgb(56, 110, 110);
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: white;
+    border: 0;
+    transition: background-color 0.1s;
+  }
+  
+ 
+  
+  .choices button {
+    display: block;
+  }
+  
+  input[type="text"] {
+    font-size: 100%;
+  }
+  
+  ol {
+    padding-left: 0px;
+    max-height: 450px;
+    overflow: auto;
+  }
+  
+  li {
+    padding: 5px;
+    list-style:square;
+  }
+  
+  
