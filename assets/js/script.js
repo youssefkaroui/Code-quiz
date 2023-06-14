@@ -200,4 +200,27 @@ function endQuiz(){
 
 
 
+
+
+function getHighscores() {
+    
+ 
+  highScoresList.sort(function(a, b) {
+    return b.score - a.score;
+  });
+
+  highScoresList.forEach(function(score) {
+   
+    var liTag = document.createElement("li");
+    liTag.textContent = score.initials + " - " + score.score;
+
+    
+    var olEl = document.getElementById("highScores");
+    olEl.appendChild(liTag);
+  });
+}
+
+
+
+
 beginBtn.addEventListener("click", startQuiz);
