@@ -1,6 +1,6 @@
 # Code-quiz
 
-![alt text] (./assets/images/README-screemshot.png) Looks like this 
+![alt text](./assets/images/README-screenshot.png) Looks like this 
 
 ## Purpose 
 
@@ -18,3 +18,8 @@ Please launch the web application on your default browser
 
 #####  Deployment 
 
+https://youssefkaroui.github.io/Code-quiz/
+
+######   Contribution
+
+Made by Youssef.K
