@@ -1,5 +1,5 @@
 body {
-    font-family:"Georgia", serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
   
@@ -7,61 +7,51 @@ body {
     display: none;
   }
   
-  .quizstart {
+  .quiz-start, .score-container {
     text-align: center;
   }
   
   
+
   
-  .timer {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  .time-count {
+    display: inline;
+    position: relative;
+    height: 40px;
+    width: 40px;
   }
   
-  a {
-    color: black;
-    text-decoration: none;
-    transition: color 2s;
-  }
-  
-  a:hover {
-    color: #5a5a6e;
-  }
   
   button {
     display: inline-block;
-    margin: 5px;
-    cursor: pointer;
-    font-family: "Georgia", 'Times New Roman', "Times", cursive;
-    font-size: 100%;
-    background-color: rgb(56, 110, 110);
-    border-radius: 5px;
+    margin: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 110%;
+    background-color: rgb(194, 92, 25);
+    border-radius: 2px;
     padding: 2px 10px;
     color: white;
     border: 0;
-    transition: background-color 0.1s;
+    
   }
   
  
   
   .choices button {
-    display: block;
-  }
-  
-  input[type="text"] {
-    font-size: 100%;
+    display:list-item;
+    
+
+    
+
+
   }
   
   ol {
+    
     padding-left: 0px;
-    max-height: 450px;
-    overflow: auto;
   }
   
-  li {
-    padding: 5px;
-    list-style:square;
-  }
+  
+  
   
   

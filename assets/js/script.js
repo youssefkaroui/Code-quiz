@@ -4,6 +4,7 @@ var choicesEl= document.querySelector("#choices");
 var submitBtnEl= document.querySelector("#initials-submission");
 var beginBtn= document.querySelector("#start-btn");
 var initialsEl= document.querySelector("#your-initials");
+var clearBtn= document.querySelector("#clear");
 var scoresEl=document.querySelector("#scores");
 var highScoresList=JSON.parse(localStorage.getItem("highscores"))|| []
 
@@ -231,19 +232,24 @@ function storeHighScores() {
 function displayHighScores() {
     
  
-  highScoresList.sort(function(a, b) {
-    return b.score - a.score;
-  });
+  // highScoresList.sort(function(a, b) {
+  //   return b.score - a.score;
+  // });
 
    for (var i=0; i<highScoresList.length; i++)  {
    
-    var liTag = document.createElement("li");
-    liTag.textContent = highScoresList[i].initials + " - " + highScoresList[i].score;
+    var liEl = document.createElement("li");
+    liEl.textContent = highScoresList[i].initials + " ==> " + highScoresList[i].score;
 
     
     var olEl = document.getElementById("highscores");
-    olEl.appendChild(liTag);
+    olEl.appendChild(liEl);
   };
+}
+// clears the list of highscores 
+function clearHighScores() {
+  window.localStorage.removeItem("highscores");
+  window.location.reload();
 }
 beginBtn.addEventListener("click", startQuiz);
 
@@ -253,4 +259,6 @@ submitBtnEl.addEventListener("click", function(event){
   storeHighScores();
   displayHighScores();
 });
+
+clearBtn.addEventListener("click", clearHighScores);
 
