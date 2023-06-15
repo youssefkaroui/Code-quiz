@@ -5,7 +5,7 @@ var submitBtnEl= document.querySelector("#initials-submission");
 var beginBtn= document.querySelector("#start-btn");
 var initialsEl= document.querySelector("#your-initials");
 var scoresEl=document.querySelector("#scores");
-var highScoresList=JSON.parse(localStorage.getItem("highScores"))|| []
+var highScoresList=JSON.parse(localStorage.getItem("highscores"))|| []
 
 var multipelQuestions=[
     {
@@ -136,7 +136,7 @@ function triggerTimer() {
         time--;
         timerEl.textContent=time;
         if (time===0){
-            quizEnd();
+            endQuiz();
             clearInterval(timerId);
         }
     },1000);
@@ -199,28 +199,58 @@ function endQuiz(){
 }
 
 
+// gets the the users initials and stores the score with the initials 
+
+function storeHighScores() {
+  
+  var initials = initialsEl.value.trim();
+  console.log(initials);
+
+  if (initials !== "") {
+    
+    var highScores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+    
+    var newScore = {
+      score: time,
+     
+      initials: initials
+    };
+
+    
+    highScores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highScores));
+
+  
+  }
+
+}
 
 
-
-function getHighscores() {
+function displayHighScores() {
     
  
   highScoresList.sort(function(a, b) {
     return b.score - a.score;
   });
 
-  highScoresList.forEach(function(score) {
+   for (var i=0; i<highScoresList.length; i++)  {
    
     var liTag = document.createElement("li");
-    liTag.textContent = score.initials + " - " + score.score;
+    liTag.textContent = highScoresList[i].initials + " - " + highScoresList[i].score;
 
     
-    var olEl = document.getElementById("highScores");
+    var olEl = document.getElementById("highscores");
     olEl.appendChild(liTag);
-  });
+  };
 }
-
-
-
-
 beginBtn.addEventListener("click", startQuiz);
+
+
+submitBtnEl.addEventListener("click", function(event){
+  event.preventDefault();
+  storeHighScores();
+  displayHighScores();
+});
+
