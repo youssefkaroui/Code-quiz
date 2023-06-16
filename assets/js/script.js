@@ -228,14 +228,14 @@ function storeHighScores() {
   }
 
 }
-
+// displays the highscores in a list 
 
 function displayHighScores() {
     
  
-  // highScoresList.sort(function(a, b) {
-  //   return b.score - a.score;
-  // });
+  highScoresList.sort(function(a, b) {
+    return b.score - a.score;
+  });
 
    for (var i=0; i<highScoresList.length; i++)  {
    
@@ -268,6 +268,8 @@ submitBtnEl.addEventListener("click", function(event){
 
 clearBtn.addEventListener("click", clearHighScores);
 
+
+//  reloads the quiz display to the start
 reloadBtn.addEventListener("click",function(){
   location.reload();
 })
