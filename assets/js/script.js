@@ -7,6 +7,8 @@ var initialsEl= document.querySelector("#your-initials");
 var clearBtn= document.querySelector("#clear");
 var scoresEl=document.querySelector("#scores");
 var highScoresList=JSON.parse(localStorage.getItem("highscores"))|| []
+var reloadBtn=document.querySelector("#play-again");
+
 
 var multipelQuestions=[
     {
@@ -196,7 +198,9 @@ function endQuiz(){
   var finalScoreEl= document.getElementById("final-score");
   finalScoreEl.textContent = time;
 
+
   questionEl.setAttribute("class","hide");
+  
 }
 
 
@@ -209,10 +213,7 @@ function storeHighScores() {
 
   if (initials !== "") {
     
-    var highScores =
-      JSON.parse(window.localStorage.getItem("highscores")) || [];
 
-    
     var newScore = {
       score: time,
      
@@ -220,8 +221,8 @@ function storeHighScores() {
     };
 
     
-    highScores.push(newScore);
-    window.localStorage.setItem("highscores", JSON.stringify(highScores));
+    highScoresList.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highScoresList));
 
   
   }
@@ -244,6 +245,7 @@ function displayHighScores() {
     
     var olEl = document.getElementById("highscores");
     olEl.appendChild(liEl);
+
   };
 }
 // clears the list of highscores 
@@ -251,6 +253,9 @@ function clearHighScores() {
   window.localStorage.removeItem("highscores");
   window.location.reload();
 }
+
+
+
 beginBtn.addEventListener("click", startQuiz);
 
 
@@ -258,7 +263,11 @@ submitBtnEl.addEventListener("click", function(event){
   event.preventDefault();
   storeHighScores();
   displayHighScores();
+  
 });
 
 clearBtn.addEventListener("click", clearHighScores);
 
+reloadBtn.addEventListener("click",function(){
+  location.reload();
+})

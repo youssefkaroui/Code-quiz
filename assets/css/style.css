@@ -7,7 +7,7 @@ body {
     display: none;
   }
   
-  .quiz-start, .score-container {
+  .quiz-start, .score-container, .play-again {
     text-align: center;
   }
   
